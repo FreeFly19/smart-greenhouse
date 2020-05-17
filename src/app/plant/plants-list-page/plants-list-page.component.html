@@ -1,0 +1,21 @@
+<section>
+  <article>
+
+    <nav>
+      <ul style="text-align: left">
+        <li><a routerLink="/plants/create">Create a new Plant</a></li>
+      </ul>
+    </nav>
+
+    <table>
+      <tr>
+        <th>Sort</th>
+        <th>Type</th>
+      </tr>
+      <tr *ngFor="let plant of plants">
+        <td>{{plant.sort}}</td>
+        <td>{{plant.plantType}}</td>
+      </tr>
+    </table>
+  </article>
+</section>

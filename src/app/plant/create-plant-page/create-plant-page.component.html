@@ -1,0 +1,29 @@
+<form (submit)="$event.preventDefault()" style="width: 400px;margin: auto">
+  <table>
+    <tr>
+      <td>Type</td>
+      <td>
+        <select style="width: 100%"
+                #plantTypeSelect
+                (change)="newPlant.plantTypeId = plantTypeSelect.value">
+          <option *ngFor="let plantType of plantTypes"
+                  [value]="plantType.id">{{plantType.title}}
+          </option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>Sort</td>
+      <td>
+        <input type="text" #sortInput style="width: 100%" (change)="newPlant.sort = sortInput.value">
+      </td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button type="submit"
+                (click)="create()"
+                style="width: 100%">Create</button>
+      </td>
+    </tr>
+  </table>
+</form>
