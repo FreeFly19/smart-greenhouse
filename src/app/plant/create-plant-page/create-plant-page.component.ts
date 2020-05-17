@@ -12,6 +12,7 @@ export class CreatePlantPageComponent implements OnInit {
   newPlant: any = {
     plantTypeId: null,
     sort: null,
+    dateOfBirth: null
   };
 
   constructor(private http: HttpClient,
@@ -28,6 +29,8 @@ export class CreatePlantPageComponent implements OnInit {
   }
 
   create() {
+    this.newPlant.dateOfBirth = window.parseInt('' + (new Date(this.newPlant.dateOfBirth).getTime() / 1000));
+
     this.http.post('/api/plants', this.newPlant)
       .subscribe(res => {
         this.router.navigate(['/', 'plants']);

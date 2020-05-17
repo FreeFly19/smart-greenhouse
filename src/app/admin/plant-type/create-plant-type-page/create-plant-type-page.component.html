@@ -1,0 +1,36 @@
+<section>
+  <article>
+    <h4>Create a new Plant Type</h4>
+
+    <form (submit)="$event.preventDefault()" style="width: 400px;margin: auto">
+      <table>
+        <tr>
+          <td>Family</td>
+          <td>
+            <select style="width: 100%"
+                    #familySelect
+                    (change)="newPlantType.familyId = familySelect.value">
+              <option *ngFor="let family of families"
+                      [value]="family.id">{{family.title}}
+              </option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Title</td>
+          <td>
+            <input type="text" #titleInput style="width: 100%" (change)="newPlantType.title = titleInput.value">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <button type="submit"
+                    (click)="create()"
+                    style="width: 100%">Create
+            </button>
+          </td>
+        </tr>
+      </table>
+    </form>
+  </article>
+</section>

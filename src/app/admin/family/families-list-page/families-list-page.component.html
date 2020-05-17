@@ -1,0 +1,20 @@
+<section>
+  <article>
+    <h4>Families List</h4>
+
+    <nav>
+      <ul style="text-align: left">
+        <li><a routerLink="create">Create a new Family</a></li>
+      </ul>
+    </nav>
+
+    <table>
+      <tr>
+        <th>Title</th>
+      </tr>
+      <tr *ngFor="let family of families">
+        <td>{{family.title}}</td>
+      </tr>
+    </table>
+  </article>
+</section>

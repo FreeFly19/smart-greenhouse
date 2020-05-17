@@ -1,6 +1,6 @@
 <section>
   <article>
-
+    <h4>Plant List</h4>
     <nav>
       <ul style="text-align: left">
         <li><a routerLink="/plants/create">Create a new Plant</a></li>
@@ -11,10 +11,14 @@
       <tr>
         <th>Sort</th>
         <th>Type</th>
+        <th>Date Of Birth</th>
+        <th>Created At</th>
       </tr>
       <tr *ngFor="let plant of plants">
         <td>{{plant.sort}}</td>
-        <td>{{plant.plantType}}</td>
+        <td>{{plant.plantType.title}}</td>
+        <td>{{plant.dateOfBirth}}</td>
+        <td>{{plant.createdAt}}</td>
       </tr>
     </table>
   </article>
